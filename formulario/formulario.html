@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="/formulario/formulario.css">
+    <!--logos pagina: FONT AWESOME-->
+</head>
+<body>
+    <main>
+        <form action="" class="formulario" id="formulario"> <!--en css se l,e puse display -->
+
+            <!--||||||||||||grupo usuario|||||||||||||||-->
+            <div class="formulario__grupo formulario__grupo-incorrecto" id="grupo__usuario"> <!--el primer grupo es grupo__usuario-->
+                <label for="usuario" class="formulario__label">Usuario</label> <!--label de usuario-->
+                <!--el icono debe estar dentro del input, encerrar dentro de un div el input y el icono -->
+            <div class="formulario__grupo-input">
+                    <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="ingrese usuario"> <!--la clase "formulario__grupo-input" sera general para TODOS los input y el name "usaurio" es para js y el id debe ser conrrespondiente al for de LABEL -->
+                    <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i> <!--incono de X para validar si el estado que ingresen a usuario esincorrecto-->
+                </div>
+                <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+            </div>
+    
+            
+            <!--||||||||||||grupo nombre|||||||||||||||-->
+            <div class="formulario__grupo" id="grupo__nombre"> <!--el primer grupo es grupo__usuario-->
+                <label for="nombre" class="formulario__label">Nombre</label> <!--label de usuario-->
+                <!--el icono debe estar dentro del input, encerrar dentro de un div el input y el icono -->
+            <div class="formulario__grupo-input">
+                    <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="ingrese su nombre"> <!--la clase "formulario__grupo-input" sera general para TODOS los input y el name "usaurio" es para js y el id debe ser conrrespondiente al for de LABEL -->
+                    <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i> <!--incono de X para validar si el estado que ingresen a usuario esincorrecto-->
+                </div>
+                <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+            </div>
+
+            <!--||||||||||||grupo contraseña|||||||||||||||-->
+            <div class="formulario__grupo" id="grupo__password"> <!--el primer grupo es grupo__password-->
+                <label for="password" class="formulario__label">Contraseña</label> <!--label de usuario-->
+                <!--el icono debe estar dentro del input, encerrar dentro de un div el input y el icono -->
+            <div class="formulario__grupo-input">
+                    <input type="password" class="formulario__input" name="password" id="password"> <!--la clase "formulario__grupo-input" sera general para TODOS los input y el name "usaurio" es para js y el id debe ser conrrespondiente al for de LABEL -->
+                    <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i> <!--incono de X para validar si el estado que ingresen a usuario esincorrecto-->
+                </div>
+                <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+            </div>
+
+            <!--||||||||||||grupo contraseña 2|||||||||||||||-->
+            <div class="formulario__grupo" id="grupo__password2"> <!--el primer grupo es grupo__password-->
+                <label for="password2" class="formulario__label">Confirmar contraseña</label> <!--label de usuario-->
+                <!--el icono debe estar dentro del input, encerrar dentro de un div el input y el icono -->
+            <div class="formulario__grupo-input">
+                    <input type="password" class="formulario__input" name="password2" id="password2"> <!--la clase "formulario__grupo-input" sera general para TODOS los input y el name "usaurio" es para js y el id debe ser conrrespondiente al for de LABEL -->
+                    <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i> <!--incono de X para validar si el estado que ingresen a usuario esincorrecto-->
+                </div>
+                <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
+            </div>
+
+            <!--||||||||||||grupo correo|||||||||||||||-->
+            <div class="formulario__grupo" id="grupo__correo"> <!--el primer grupo es grupo__usuario-->
+                <label for="correo" class="formulario__label">Correo Electrónico</label> <!--label de usuario-->
+                <!--el icono debe estar dentro del input, encerrar dentro de un div el input y el icono -->
+            <div class="formulario__grupo-input">
+                    <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com"> <!--la clase "formulario__grupo-input" sera general para TODOS los input y el name "usaurio" es para js y el id debe ser conrrespondiente al for de LABEL -->
+                    <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i> <!--incono de X para validar si el estado que ingresen a usuario esincorrecto-->
+                </div>
+                <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+            </div>
+            
+            <!--||||||||||||grupo telefono|||||||||||||||-->
+            <div class="formulario__grupo" id="grupo__telefono"> <!--el primer grupo es grupo__usuario-->
+                <label for="telefono" class="formulario__label">Teléfono</label> <!--label de usuario-->
+                <!--el icono debe estar dentro del input, encerrar dentro de un div el input y el icono -->
+            <div class="formulario__grupo-input">
+                    <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="Télefono"> <!--la clase "formulario__grupo-input" sera general para TODOS los input y el name "usaurio" es para js y el id debe ser conrrespondiente al for de LABEL -->
+                    <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i> <!--incono de X para validar si el estado que ingresen a usuario esincorrecto-->
+                </div>
+                <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+            </div>
+            <!--grupo para terminos y condiciones-->
+
+            <div class="formulario__grupo" id="grupo__terminos">
+                <label class="formulario__label">
+					<input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos"> <!--se puse el input y el checkbox dentro del label para cuando le den un click el chulito cambie dentro del cuadro-->
+					Acepto los Terminos y Condiciones
+				</label>
+			</div>
+            <!--mensaje de erro-->
+
+            <div class="formulario__mensaje" id="formulario__mensaje">
+                <p><i class="fa-solid fa-triangle-exclamation"></i> <b>Error:</b> Por favor rellena el formulario correctamente.</p> <!-- <b> es para poner la letra en negrilla-->
+            </div>
+            <div class="formulario__grupo formulario__grupo-btn-enviar">
+                <button type="submit" class="formulario__btn">Enviar</button> <!--boton para cuando se de click enviar inf del formulario-->
+                <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p> <!--id y clase para usar en el css y js-->
+            </div>
+        </form>
+    </main>
+    <script src="/formulario/formulario.js"></script>
+    <script src="https://kit.fontawesome.com/70c01b7143.js" crossorigin="anonymous"></script> <!--logos pagina: FONT AWESOME-->
+</body>
+</html>

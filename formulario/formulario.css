@@ -1,0 +1,175 @@
+*{
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	background: #E5E5E5;
+}
+
+main {
+	max-width: 800px;
+	width: 90%;
+	margin: auto;
+	padding: 40px;
+}
+
+.formulario{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /*esto hacer que se reparta en colummnas*/
+    gap: 20px; /*se separa cada espacio*/
+}
+
+.formulario__label{
+    display: block; /*abarca el 100%*/
+    font-weight: 700;
+    padding: 10px; /*espacio en todos lados*/
+    cursor: pointer; /*kanito*/
+}
+
+.formulario__grupo-input{ 
+    position: relative; /*posicion relativo y luego el icono le ponemos posocion absoluta para poner el icono dentro del input*/
+}
+
+.formulario__input{
+    width: 100%; /*abarca todo el espacio dispo*/
+    background: white; /*el fondo*/
+    border: 3px solid transparent;
+    border-radius: 3px; /*borde de los input*/
+    height:45px; /*la altura del input*/
+    line-height: 45px ; /*altura a la letra igual para que quede centrado*/
+    padding: 0px 40px 0px 10px; /*arriba, a la derecha, abajo, a la izquierda*/
+    transition:  .3 ease all; /*cuando se da click hay una transsition y se cmabia de color en el :focus*/
+}
+
+/*cuando se le da un click aparece un borde cuando este encima del input*/
+.formulario__grupo-input:focus{
+    border: 3px solid #0075FF; /*cuadno se da click cambia a este color*/
+    outline: none; /*quita subrayado*/
+    box-shadow: 3px 0px 30px rgb(163, 163,163, 0.4); /*sombra*/
+}
+
+.formulario__input-error{
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none; /*oculta la X en el mensaje input error*/
+}
+
+.formulario__input-error-activo{
+    display: block; /*modicador, cuadnoe le eeror del input este activo se va mostrar*/
+}
+
+.formulario__validacion-estado{
+    position: absolute; /**/
+    right: 10px;/*derecha a izquierda, se corre a la derecha*/
+    bottom: 15px; /*hacia abajo 15 px*/
+    z-index: 100;  /*asegurar que esta por arriba de otros elementos*/
+    font-size: 16px;
+    opacity: 0; /*no se muestra solo se me7ustra cuando hay un error*/
+}
+
+.formulario__checkbox{
+    margin-right: 10px; /*se pone margin de 10px del cuadrito de check a la frase "acepto terminos..."*/
+}
+
+
+/*como poner que acepto terminos y condiciones y error abarque solo una columna*/
+
+.formulario__grupo-grupo__terminos,
+.formulario__mensaje,
+.formulario__grupo-btn-enviar{
+    grid-column: span 2; /*]hace que se separe en diferentes renglones*/
+}
+
+
+/*mensaje de error cuando no halla rellenado todo el formulario*/ 
+.formulario__mensaje {
+	height: 45px; /*altura de la linea*/
+	line-height: 45px; /*altura de la letra para que se vea centrada, se usa igual*/
+	background: #F66060; /*el fondo del mensaje de error*/
+	padding: 0 15px; /*arriba y abajo, izq derecha*/
+	border-radius: 3px;
+	display: none;
+}
+
+.formulario__mensaje-activo {
+	display: block; /*mensaje oculto, solo se muestra cuando activo la clase*/
+}
+
+.formulario__mensaje p {
+	margin: 0; /*se le quita la margen*/
+}
+
+/*organziar el boton*/
+.formulario__grupo-btn-enviar {
+	display: flex;
+	flex-direction: column; /*hace que quede un elemento abajo del otro*/
+	align-items: center; /*se alinean los items de adentro del boton, los centra IMPORTANTE*/
+}
+
+/*DISEÑOS DEL BOTON*/
+.formulario__btn {
+	height: 45px;
+	line-height: 45px;
+	width: 30%;
+	background: #000;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: .1s ease all; /*hace que cuando tenga una transfition tenga otro color*/
+}
+
+.formulario__btn:hover {
+	box-shadow: 3px 0px 30px rgba(163,163,163, 1); /*hace que el boton cambie cuando se haga trancition encima del// box-shadow es una sombra*/ 
+}
+
+/*MENSAJE DE FORMULARIO ENVIADO EXITOSAMENTE*/
+.formulario__mensaje-exito {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+}
+
+.formulario__mensaje-exito-activo {
+	display: block; /*hace que solo se active cuadno tenga la clase activo*/
+}
+
+/* ----- -----  Estilos para Validacion de datos ----- ----- */
+
+.formulario__grupo-correcto .formulario__validacion-estado { /*al grupo se le pone dos clases del correcto e incorrecto*/
+	color: #1ed12d;
+	opacity: 1; /*cuando tenga el formulario grupo y es correcto toma esta clase, la validacion .formulario__validacion-estado*/
+}
+
+.formulario__grupo-incorrecto .formulario__label { /*.ingresamos a la clase formulario__grupo-incorrecto, queremos que el .formulario__label sea color rojo*/
+	color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado { /*cuando el grupo sea incorrecto ingrese a .formulario__validacion-estado que es el icono sea de color rojo y tenga opacidad que se oculta cuando no este incorrecto*/
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input { /*para el borde que se ponga rojo */
+	border: 3px solid #bb2929;
+}
+
+
+/* ----- -----  Mediaqueries que de dos columnas se pase a una----- ----- */
+@media screen and (max-width: 800px) { /*se accede a la pantalla y cuando sea de 800px se pinbga a una columna*/
+	.formulario {
+		grid-template-columns: 1fr; /*una columna*/
+	}
+
+	.formulario__grupo-terminos, 
+	.formulario__mensaje,
+	.formulario__grupo-btn-enviar { /**/
+		grid-column: 1; /*en menos de 800px se cambia de 2 span a 1para que sea responsive completamente*/
+	}
+
+	.formulario__btn {
+		width: 100%; /*y que el boton abarque el 100% de ancho cuando este en 800px o menos*/
+	}
+}
